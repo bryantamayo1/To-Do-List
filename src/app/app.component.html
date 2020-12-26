@@ -13,43 +13,44 @@
 </div>
 
 <div class="body-container" [ngClass]="{'body-containerDark' : modeChange == true}">
-  <div class="containerTable">
-  <div class="myTable" [ngClass]="{'myTableDark' : modeChange == true}">
+    <div class="containerTable">
+        <div class="myTable" [ngClass]="{'myTableDark' : modeChange == true}">
 
-      <div class="tableHeader">
-          <div class="orderTask"  [ngClass]="{'borderRightDark' : modeChange == true}">#</div>
-          <div class="nameTask" [ngClass]="{'borderRightDark' : modeChange == true}">Task</div>
-          <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">Date</div>
-          <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}">Done</div>
-          <div class="buttomTask" ></div>
-      </div>
+            <div class="tableHeader">
+                <div class="orderTask"  [ngClass]="{'borderRightDark' : modeChange == true}">#</div>
+                <div class="nameTask" [ngClass]="{'borderRightDark' : modeChange == true}">Task</div>
+                <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">Date</div>
+                <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}">Done</div>
+                <div class="buttomTask" ></div>
+            </div>
 
-      <div *ngFor="let task of bufferTask" [hidden]="task.check && testCheck" class="containerTasks" [ngClass]="{'containerTasksDark' : modeChange == true}">
+            <div *ngFor="let task of bufferTask" [hidden]="task.check && testCheck" class="containerTasks" [ngClass]="{'containerTasksDark' : modeChange == true}">
 
-              <div class="orderTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.id}}</div>
-              <div class="nameTask nameTaslStyle" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.name}}</div>
-              <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.date}}</div>
-              <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}"><input type="checkbox" (change)="clickCheck($event, task)" ></div>
-              <div class="buttomTask"><button type="button" (click)="deleteTask(task.name)" class="btn btn-primary">Delete task</button></div>
+                    <div class="orderTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.id}}</div>
+                    <div class="nameTask nameTaslStyle" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.name}}</div>
+                    <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.date}}</div>
+                    <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}"><input type="checkbox" (change)="clickCheck($event, task)" ></div>
+                    <div class="buttomTask"><button type="button" (click)="deleteTask(task.name)" class="btn btn-primary">Delete task</button></div>
 
-      </div>
+            </div>
 
-  </div>
+        </div>
 
-  <div class="form-group divInsertTask">
-    <input type="text" class="form-control" [(ngModel)]="nameTask" (keyup.enter)="addTask()" placeholder="Insert task">
-  </div>
+        <div class="form-group divInsertTask">
+          <input type="text" class="form-control" [(ngModel)]="nameTask" (keyup.enter)="addTask()" placeholder="Insert task">
+        </div>
 
-  <div class="actionsButton">
-    <button class="btn btn-primary"  (click)="addTask()">Add new task</button>
-    <button class="btn btn-primary" (click)="hiddenComplete()" *ngIf="showTask">Hide complete</button>
-    <button class="btn btn-primary" (click)="showComplete()" *ngIf="!showTask">Show complete</button>
-  </div>
+        <div class="actionsButton">
+          <button class="btn btn-primary"  (click)="addTask()">Add new task</button>
+          <button class="btn btn-primary" (click)="hiddenComplete()" *ngIf="showTask">Hide complete</button>
+          <button class="btn btn-primary" (click)="showComplete()" *ngIf="!showTask">Show complete</button>
+          <button class="btn btn-primary" (click)="exportTableToCSV('to-do-list.csv')">Generate CSV</button>
+
+        </div>
+
+    </div>
 
 
-
-
-</div>
 </div>
 
 

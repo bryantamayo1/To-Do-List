@@ -73,7 +73,6 @@ export class AppComponent implements OnInit{
             this.showTask = false;
             this.testCheck = true;
         }
-
     }
   }
 
@@ -90,5 +89,73 @@ export class AppComponent implements OnInit{
       task.check = false;
     }
   }
+
+  exportTableToCSV(filename) {
+    let csv = [];
+    let rowHeader = document.getElementsByClassName("tableHeader");
+    let rowHeaderDiv = rowHeader[0].getElementsByTagName("div");
+    let stringRowHeader = [];
+
+    for(let i = 0; i < rowHeaderDiv.length; i++){
+      let colsHeader = (rowHeaderDiv[i] as HTMLElement).innerText;
+      stringRowHeader.push(colsHeader);
+    }
+    csv.push(stringRowHeader.join(","));
+
+    /*
+    console.log("Esto es stringRowHeader: ", stringRowHeader);
+
+    let rowTasks = document.getElementsByClassName("containerTasks");
+    for(let i = 0; i < rowTasks.length; i++){
+      let stringTask= [], rowTask = rowTasks[i].getElementsByTagName("div");
+
+      for(let j = 0; j < rowTask.length - 1; j++ )
+        stringTask.push( (rowTask[j] as HTMLElement).innerText);
+
+      csv.push(stringTask.join(","));
+    }
+    */
+
+    this.bufferTask.forEach( element => {
+      let id = element.id;
+      let name = element.name;
+      let date = element.date;
+      let check = element.check;
+      let stringRow = id+","+name+","+date+","+check;
+      csv.push(stringRow);
+    });
+
+    console.log("Esto es csv: ", csv);
+
+    // Download CSV file
+    this.downloadCSV(csv.join("\n"), filename);
+}
+
+    downloadCSV(csv, filename) {
+    let csvFile;
+    let downloadLink;
+
+    // CSV file
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // Create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Hide download link
+    downloadLink.style.display = "none";
+
+    // Add the link to DOM
+    document.body.appendChild(downloadLink);
+
+    // Click download link
+    downloadLink.click();
+    }
+
 
 }

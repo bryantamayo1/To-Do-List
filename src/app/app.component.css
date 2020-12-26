@@ -38,11 +38,9 @@
 .switch {
   position: relative;
   display: inline-block;
-
-  width: 60px;
-  height: 34px;
+  width: 40px;
+  height: 23px;
   margin-bottom: 0;
-
 }
 
 .switch input {
@@ -66,8 +64,8 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 16px;
+  width: 16px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -84,9 +82,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
 }
 
 /* Rounded sliders */
@@ -173,6 +171,10 @@ input:checked + .slider:before {
   display: flex;
 }
 
+.containerTasks:hover{
+  background-color: rgba(0, 0, 0, 0.076) !important;
+}
+
 .containerTasks div{
   border-top: 1px solid white;
   text-align: center;
@@ -213,9 +215,9 @@ input:checked + .slider:before {
 .actionsButton{
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 20px;
-  width: 20vw;
+  width: 30vw;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
@@ -236,3 +238,28 @@ input:checked + .slider:before {
   color:black !important;
 }
 
+@media (max-width : 1260px){
+  .actionsButton{
+    flex-direction: column;
+
+    width: 150px;
+
+  }
+
+  .actionsButton button{
+    margin-bottom: 20px;
+  }
+
+  .btn-primary{
+    color:white;
+    height: 30px;
+    display: flex;
+    border:none;
+    outline: none;
+    justify-content: center;
+  }
+
+  .btn-primary:focus{
+    box-shadow: none;
+  }
+}
