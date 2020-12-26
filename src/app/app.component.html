@@ -30,7 +30,6 @@
               <div class="nameTask nameTaslStyle" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.name}}</div>
               <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.date}}</div>
               <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}"><input type="checkbox" (change)="clickCheck($event, task)" ></div>
-              <!--<div class="buttomTask"><button class="btDelete" (click)="deleteTask(task.name)">Delete task</button></div>-->
               <div class="buttomTask"><button type="button" (click)="deleteTask(task.name)" class="btn btn-primary">Delete task</button></div>
 
       </div>
