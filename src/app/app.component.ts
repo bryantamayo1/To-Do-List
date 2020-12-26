@@ -20,11 +20,21 @@ export class AppComponent implements OnInit{
   testCheck:boolean = false;
   year = new Date().getFullYear();
   cont : number = 0;
-
+  modeChange: boolean = false;
+  contMode : number = 0;
 
   ngOnInit(){
 
 
+  }
+
+  mode(){
+    this.contMode++;
+    if(this.contMode % 2 == 0){
+      this.modeChange = false;
+    }else{
+      this.modeChange = true;
+    }
   }
 
   addTask() {

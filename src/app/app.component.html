@@ -1,33 +1,52 @@
 
-<div class="header">To Do List</div>
+<div class="header" [ngClass]="{'headerDark' : modeChange == true}">
+    <div class="title">
+      To Do List
+    </div>
 
-<div class="body-container">
+    <div class="divToggle">
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round" (click)="mode()"></span>
+      </label>
+    </div>
+</div>
+
+<div class="body-container" [ngClass]="{'body-containerDark' : modeChange == true}">
   <div class="containerTable">
-  <div class="myTable">
+  <div class="myTable" [ngClass]="{'myTableDark' : modeChange == true}">
 
       <div class="tableHeader">
-          <div class="orderTask">#</div>
-          <div class="nameTask">Task</div>
-          <div class="dateTask">Date</div>
-          <div class="doneTask">Done</div>
-          <div class="buttomTask"></div>
+          <div class="orderTask"  [ngClass]="{'borderRightDark' : modeChange == true}">#</div>
+          <div class="nameTask" [ngClass]="{'borderRightDark' : modeChange == true}">Task</div>
+          <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">Date</div>
+          <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}">Done</div>
+          <div class="buttomTask" ></div>
       </div>
 
-      <div *ngFor="let task of bufferTask" [hidden]="task.check && testCheck" class="containerTasks">
+      <div *ngFor="let task of bufferTask" [hidden]="task.check && testCheck" class="containerTasks" [ngClass]="{'containerTasksDark' : modeChange == true}">
 
-              <div class="orderTask">{{task.id}}</div>
-              <div class="nameTask">{{task.name}}</div>
-              <div class="dateTask">{{task.date}}</div>
-              <div class="doneTask"><input type="checkbox" (change)="clickCheck($event, task)" ></div>
-              <div class="buttomTask"><button (click)="deleteTask(task.name)">Delete task</button></div>
+              <div class="orderTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.id}}</div>
+              <div class="nameTask nameTaslStyle" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.name}}</div>
+              <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.date}}</div>
+              <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}"><input type="checkbox" (change)="clickCheck($event, task)" ></div>
+              <!--<div class="buttomTask"><button class="btDelete" (click)="deleteTask(task.name)">Delete task</button></div>-->
+              <div class="buttomTask"><button type="button" (click)="deleteTask(task.name)" class="btn btn-primary">Delete task</button></div>
 
       </div>
 
   </div>
 
-  <input type="string" [(ngModel)]="nameTask" (keyup.enter)="addTask()" placeholder="Insert task"><button (click)="addTask()">Add new task</button>
-  <button class="buttonShow" (click)="hiddenComplete()" *ngIf="showTask">Hide complete</button>
-  <button class="buttonShow" (click)="showComplete()" *ngIf="!showTask">Show complete</button>
+  <div class="form-group divInsertTask">
+    <input type="text" class="form-control" [(ngModel)]="nameTask" (keyup.enter)="addTask()" placeholder="Insert task">
+  </div>
+
+  <div class="actionsButton">
+    <button class="btn btn-primary"  (click)="addTask()">Add new task</button>
+    <button class="btn btn-primary" (click)="hiddenComplete()" *ngIf="showTask">Hide complete</button>
+    <button class="btn btn-primary" (click)="showComplete()" *ngIf="!showTask">Show complete</button>
+  </div>
+
 
 
 
@@ -35,8 +54,7 @@
 </div>
 
 
-<footer class=" text-white myFooter">
-
+<footer class=" text-white myFooter" [ngClass]="{'myFooterDark' : modeChange == true}">
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© {{year}} Copyright:
     <a href="https://www.linkedin.com/in/bryan-tamayo-abad/">in/bryan-tamayo-abad</a>
