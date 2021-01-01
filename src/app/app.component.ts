@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from "jquery";
 
 type Task = {
   id: number;
@@ -22,6 +23,13 @@ export class AppComponent implements OnInit{
   cont : number = 0;
   modeChange: boolean = false;
   contMode : number = 0;
+  modifiedClick : boolean = false;
+  taskModified : Task[] = [{
+    id:0,
+    name:"0",
+    check: false,
+    date:"0"
+  }];
 
   ngOnInit(){
 
@@ -157,5 +165,19 @@ export class AppComponent implements OnInit{
     downloadLink.click();
     }
 
+    modifiedTask(id : number){
+      this.taskModified = this.bufferTask.filter(element => element.id == id);
+      let heightBodyContainer = $('.body-container').outerHeight();
+      let divHeightBody = "--height-body-container: "+heightBodyContainer +"px;";
+      $('.overlay').attr({'style' : divHeightBody});
+      this.modifiedClick = true;
+    }
+
+    close(event : string){
+      console.log("ESto es modifiedClick: ", this.modifiedClick);
+      console.log("Entra aki");
+      this.modifiedClick = false;
+      console.log("ESto es modifiedClick: ", this.modifiedClick);
+    }
 
 }

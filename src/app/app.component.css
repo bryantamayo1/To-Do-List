@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
 
+:root{
+  --height-body-container : 10px;
+}
+
+.overlay{
+  position: absolute;
+  height: calc( var(--height-body-container) + 60px + 56px);
+  width: 100%;
+  top:0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
 .header{
   background-color: black;
   width: 100;
@@ -140,14 +153,12 @@ input:checked + .slider:before {
   width: 3vw;
 }
 
-.nameTask{
+.tableHeader .nameTask{
   border-right: 1px solid white;
   width: 45vw;
 }
 
-.nameTaslStyle{
-  font-family: 'Cardo',cursive;
-}
+
 
 .dateTask{
   border-right: 1px solid white;
@@ -160,7 +171,7 @@ input:checked + .slider:before {
 }
 
 .borderRightDark{
-  border-right: 1px solid black;
+  border-right: 1px solid black !important;
 }
 
 .buttomTask{
@@ -188,6 +199,15 @@ input:checked + .slider:before {
   border-top: 1px solid black;
 }
 
+.containerTasks .nameTask{
+  position: relative;
+  cursor: pointer;
+  border-right: 1px solid white;
+  width: 45vw;
+  font-family: 'Cardo',cursive;
+
+}
+
 .btn-primary{
   color:white;
   height: 30px;
@@ -199,6 +219,7 @@ input:checked + .slider:before {
 
 .btn-primary:focus{
   box-shadow: none;
+  background: #007BFF;
 }
 
 .divInsertTask{
@@ -238,12 +259,11 @@ input:checked + .slider:before {
   color:black !important;
 }
 
+
 @media (max-width : 1260px){
   .actionsButton{
     flex-direction: column;
-
     width: 150px;
-
   }
 
   .actionsButton button{
@@ -261,5 +281,22 @@ input:checked + .slider:before {
 
   .btn-primary:focus{
     box-shadow: none;
+    background: #007BFF;
   }
 }
+
+
+.taskComponent{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+  width: 300px;
+  z-index: 2;
+  border-radius: 5px;
+  border: 1px solid black;
+
+  background: white ;
+}
+

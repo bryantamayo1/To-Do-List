@@ -1,3 +1,9 @@
+<div class="overlay" *ngIf="modifiedClick">
+  <div class="taskComponent" *ngIf="modifiedClick">
+    <app-task [taskName]="this.taskModified[0].name" (closeEevent)="close($event)">
+    </app-task>
+  </div>
+</div>
 
 <div class="header" [ngClass]="{'headerDark' : modeChange == true}">
     <div class="title">
@@ -27,7 +33,10 @@
             <div *ngFor="let task of bufferTask" [hidden]="task.check && testCheck" class="containerTasks" [ngClass]="{'containerTasksDark' : modeChange == true}">
 
                     <div class="orderTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.id}}</div>
-                    <div class="nameTask nameTaslStyle" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.name}}</div>
+
+                    <div class="nameTask" [ngClass]="{'borderRightDark' : modeChange == true}" (click)="modifiedTask(task.id)">{{task.name}}
+                    </div>
+
                     <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.date}}</div>
                     <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}"><input type="checkbox" (change)="clickCheck($event, task)" ></div>
                     <div class="buttomTask"><button type="button" (click)="deleteTask(task.name)" class="btn btn-primary">Delete task</button></div>
@@ -49,6 +58,7 @@
         </div>
 
     </div>
+
 
 
 </div>

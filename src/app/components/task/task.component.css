@@ -1,0 +1,16 @@
+.close{
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.btn-primary:focus{
+  box-shadow: none;
+  background: #007BFF;
+}
+
+.sonComponent{
+  display: block;
+}
+
+/*https://es.stackoverflow.com/questions/29189/c%C3%B3mo-aplicar-una-capa-oscura-transparente-a-una-imagen-de-fondo*/
