@@ -7,20 +7,23 @@
 
 .overlay{
   position: absolute;
-  height: calc( var(--height-body-container) + 60px + 56px);
+  height: var(--height-body-container);
   width: 100%;
-  top:0;
   background-color: rgba(0,0,0,0.6);
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header{
+  position:-webkit-sticky;
+  position: sticky;
   background-color: black;
-  width: 100;
+  width: 100%;
   height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top:0;
+
   color:white;
 
   font-size: 35px;
@@ -35,16 +38,19 @@
 
 .title{
   font-family: 'Lobster', cursive;
+  text-align: center;
 }
 
 .divToggle{
   position: absolute;
+  height: 60px;
   right: 0;
+  top:0;
   margin-right: 10px;
-
   display: flex;
   align-items: center;
-  justify-content: center;
+
+
 
 }
 
@@ -126,6 +132,7 @@ input:checked + .slider:before {
   color: white;
   border: 2px solid white;
 
+
 }
 
 .myTableDark{
@@ -200,11 +207,13 @@ input:checked + .slider:before {
 }
 
 .containerTasks .nameTask{
-  position: relative;
   cursor: pointer;
   border-right: 1px solid white;
   width: 45vw;
   font-family: 'Cardo',cursive;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
 }
 
@@ -285,18 +294,75 @@ input:checked + .slider:before {
   }
 }
 
+@media (max-width : 1070px){
+  .myTable{
+    width: 805px !important;
+
+  }
+
+  .tableHeader{
+    width: 800px !important;
+  }
+
+  .containerTasks{
+    width: 800px !important;
+  }
+
+  .orderTask{
+    width: 32px !important;
+  }
+
+  .nameTask{
+    width: 485px !important;
+  }
+
+  .dateTask{
+    width: 140px !important;
+  }
+
+  .doneTask{
+    width: 43px !important;
+  }
+
+  .buttomTask{
+    width: 107px !important;
+  }
+}
+
+
+@media (max-width : 920px){
+  .scrollTable{
+    overflow-x:scroll;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .myTable{
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media(max-width : 640px){
+  .taskComponent{
+    width: 400px !important;
+  }
+}
+
+@media(max-width : 375px){
+  .taskComponent{
+    width: 350px !important;
+  }
+}
 
 .taskComponent{
   position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: -150px;
-  width: 300px;
+  top:35%;
+  width: 600px;
   z-index: 2;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid black;
-
   background: white ;
 }
 

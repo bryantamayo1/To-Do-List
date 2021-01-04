@@ -1,6 +1,7 @@
 <div class="overlay" *ngIf="modifiedClick">
   <div class="taskComponent" *ngIf="modifiedClick">
-    <app-task [taskName]="this.taskModified[0].name" (closeEevent)="close($event)">
+    <app-task [taskName]="this.taskModified[0].name" (closeEevent)="close($event)"
+    (valModified)="modifiedValUser($event)">
     </app-task>
   </div>
 </div>
@@ -20,33 +21,35 @@
 
 <div class="body-container" [ngClass]="{'body-containerDark' : modeChange == true}">
     <div class="containerTable">
-        <div class="myTable" [ngClass]="{'myTableDark' : modeChange == true}">
+      <div class="scrollTable">
+            <div class="myTable" [ngClass]="{'myTableDark' : modeChange == true}">
 
-            <div class="tableHeader">
-                <div class="orderTask"  [ngClass]="{'borderRightDark' : modeChange == true}">#</div>
-                <div class="nameTask" [ngClass]="{'borderRightDark' : modeChange == true}">Task</div>
-                <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">Date</div>
-                <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}">Done</div>
-                <div class="buttomTask" ></div>
+                <div class="tableHeader">
+                    <div class="orderTask"  [ngClass]="{'borderRightDark' : modeChange == true}">#</div>
+                    <div class="nameTask" [ngClass]="{'borderRightDark' : modeChange == true}">Task</div>
+                    <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">Date</div>
+                    <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}">Done</div>
+                    <div class="buttomTask" ></div>
+                </div>
+
+                <div *ngFor="let task of bufferTask" [hidden]="task.check && testCheck" class="containerTasks" [ngClass]="{'containerTasksDark' : modeChange == true}">
+
+                        <div class="orderTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.id}}</div>
+
+                        <div class="nameTask" [ngClass]="{'borderRightDark' : modeChange == true}" (click)="modifiedTask(task.id)">{{task.name}}
+                        </div>
+
+                        <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.date}}</div>
+                        <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}"><input type="checkbox" (change)="clickCheck($event, task)" ></div>
+                        <div class="buttomTask"><button type="button" (click)="deleteTask(task.name)" class="btn btn-primary" >Delete task</button></div>
+
+                </div>
+
             </div>
-
-            <div *ngFor="let task of bufferTask" [hidden]="task.check && testCheck" class="containerTasks" [ngClass]="{'containerTasksDark' : modeChange == true}">
-
-                    <div class="orderTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.id}}</div>
-
-                    <div class="nameTask" [ngClass]="{'borderRightDark' : modeChange == true}" (click)="modifiedTask(task.id)">{{task.name}}
-                    </div>
-
-                    <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.date}}</div>
-                    <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}"><input type="checkbox" (change)="clickCheck($event, task)" ></div>
-                    <div class="buttomTask"><button type="button" (click)="deleteTask(task.name)" class="btn btn-primary">Delete task</button></div>
-
-            </div>
-
-        </div>
+      </div>
 
         <div class="form-group divInsertTask">
-          <input type="text" class="form-control" [(ngModel)]="nameTask" (keyup.enter)="addTask()" placeholder="Insert task">
+          <input type="text" class="form-control"  maxlength="100" [(ngModel)]="nameTask" (keyup.enter)="addTask()" placeholder="Insert task">
         </div>
 
         <div class="actionsButton">

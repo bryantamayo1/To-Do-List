@@ -1,16 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 .close{
   width: 15px;
   height: 15px;
   cursor: pointer;
 }
 
+.btn-primary{
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
 .btn-primary:focus{
   box-shadow: none;
   background: #007BFF;
 }
-
-.sonComponent{
+.sonComponent {
   display: block;
 }
 
-/*https://es.stackoverflow.com/questions/29189/c%C3%B3mo-aplicar-una-capa-oscura-transparente-a-una-imagen-de-fondo*/
+.imgClose {
+  margin-left: 0 !important;
+  margin-right: 4px !important;
+  margin-top: 4px !important;
+  justify-content: flex-end;
+
+}
+
+.textModified{
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+
+}
+
+/*
+.textTask{
+  padding-left: 4px;
+  padding-right: 4px;
+}
+*/
+
+.buttomModified{
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+#charNum{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 3px;
+  font-family: 'Audiowide',cursive;
+
+}
+

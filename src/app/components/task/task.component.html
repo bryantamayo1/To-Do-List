@@ -1,16 +1,19 @@
-<div class="sonComponent container">
-  <div class="row">
+<div class="sonComponent">
+  <div class="row imgClose">
     <img (click)="close()" class="close" src="/assets/images/close.png" alt="close">
   </div>
 
-  <div class="row">
-    <div>{{taskName}}</div>
+  <div class="row textModified">
+    <input type="text" class="form-control" maxlength="100" [(ngModel)]="taskName"  (keyup.enter)="sendModified()" (keyup)="countChars($event)">
+    <!--<div contenteditable (input)="onNameChange($event.target.innerHTML)" class="textTask">{{taskName}}</div>-->
+    <div id="charNum">{{countLetters}} / 100</div>
   </div>
 
-  <div class="row">
-    <button class="btn btn-primary" >Modificate</button>
+  <div class="row buttomModified">
+    <button class="btn btn-primary" (click)="sendModified()">Modificate</button>
   </div>
 </div>
+
 
 
 

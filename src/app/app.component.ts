@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
+import { element } from 'protractor';
 
 type Task = {
   id: number;
@@ -30,8 +31,17 @@ export class AppComponent implements OnInit{
     check: false,
     date:"0"
   }];
+  //detectScreen : boolean = true;
+
+
+  constructor(){
+    //this.x.addEventListener("resize",this.changeScreen);
+    //$(window).resize(this.changeScreen);
+
+  }
 
   ngOnInit(){
+
 
 
   }
@@ -68,6 +78,7 @@ export class AppComponent implements OnInit{
 
     }
     this.nameTask ="";
+
   }
 
   deleteTask(task : string){
@@ -133,8 +144,6 @@ export class AppComponent implements OnInit{
       csv.push(stringRow);
     });
 
-    console.log("Esto es csv: ", csv);
-
     // Download CSV file
     this.downloadCSV(csv.join("\n"), filename);
 }
@@ -146,7 +155,7 @@ export class AppComponent implements OnInit{
     // CSV file
     csvFile = new Blob([csv], {type: "text/csv"});
 
-    // Download link
+    // Download link window.matchMedia("(max-width: 1070px)"));
     downloadLink = document.createElement("a");
 
     // File name
@@ -168,16 +177,45 @@ export class AppComponent implements OnInit{
     modifiedTask(id : number){
       this.taskModified = this.bufferTask.filter(element => element.id == id);
       let heightBodyContainer = $('.body-container').outerHeight();
+      heightBodyContainer += (60+56);
       let divHeightBody = "--height-body-container: "+heightBodyContainer +"px;";
-      $('.overlay').attr({'style' : divHeightBody});
+      $('body').attr({'style':divHeightBody});
       this.modifiedClick = true;
     }
 
     close(event : string){
-      console.log("ESto es modifiedClick: ", this.modifiedClick);
-      console.log("Entra aki");
       this.modifiedClick = false;
-      console.log("ESto es modifiedClick: ", this.modifiedClick);
     }
+
+    modifiedValUser(event: string){
+      //Update buffer
+      let index = this.bufferTask.findIndex( element => element.id == this.taskModified[0].id);
+      this.bufferTask[index].name = event;
+
+      let taskToModificate = document.getElementsByClassName("orderTask");
+      for(let i=0; i < taskToModificate.length; i++){
+        if((taskToModificate[i] as HTMLElement).innerHTML == String(this.taskModified[0].id)){
+            let taskHTML = document.getElementsByClassName("nameTask");
+            (taskHTML[i] as HTMLElement).innerHTML = event;
+            break;
+        }
+      }
+    }
+
+    /*
+    changeScreen(){
+      let x = window.matchMedia("(max-width: 1070px)");
+      console.log(x);
+      if (x.matches) {
+        this.detectScreen = false;
+        console.log("Entra aki: ",x.matches);
+        console.log("sss.. ",this.detectScreen);
+      } else {
+        console.log("Entra aki: ",x.matches);
+        this.detectScreen = true;
+      }
+    }
+    */
+
 
 }
