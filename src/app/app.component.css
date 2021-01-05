@@ -356,6 +356,12 @@ input:checked + .slider:before {
   }
 }
 
+@media(max-width : 350px){
+  .taskComponent{
+    width: 270px !important;
+  }
+}
+
 .taskComponent{
   position: fixed;
   top:35%;
