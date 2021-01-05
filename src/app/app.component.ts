@@ -59,7 +59,7 @@ export class AppComponent implements OnInit{
     if(this.nameTask !== ""){
         let dateTask = new Date();
         let newDate : string = JSON.parse(JSON.stringify(dateTask.getDate())) + "/"+
-        JSON.parse(JSON.stringify(dateTask.getMonth())) +"/"+
+        JSON.parse(JSON.stringify(dateTask.getMonth())) +1 +"/"+
         JSON.parse(JSON.stringify(dateTask.getFullYear()))+" " +
         JSON.parse(JSON.stringify(dateTask.getHours())) +":"+
         JSON.parse(JSON.stringify(dateTask.getMinutes()))+":"+
@@ -73,12 +73,43 @@ export class AppComponent implements OnInit{
           check:false,
           date : newDate
         }
-        newTask.name = this.nameTask;
+        newTask.name = this.changeLetter(this.nameTask,",","-");
         this.bufferTask.push(newTask);
-
     }
-    this.nameTask ="";
 
+    this.nameTask ="";
+  }
+
+  changeLetter(phrase, letter, cLetter) : string {
+    let originalPhrase = phrase;
+    let resultPhrase = "";
+    let index = 0;
+    let aux = false;
+
+    while (index >= 0) {
+      phrase = resultPhrase + phrase.substr(index);
+      index = phrase.indexOf(letter, index);
+
+      if (index == -1 && aux == false) {
+        resultPhrase = originalPhrase;
+
+      } else if (index == -1 && aux == true ) {
+        if(resultPhrase.length != originalPhrase.length){
+          resultPhrase = resultPhrase + originalPhrase.substr(originalPhrase.lastIndexOf(letter)+1);
+        }
+
+
+      } else if (index >= 0) {
+        let findword = phrase.substr(0, index + 1);
+        resultPhrase = findword.replace(letter, cLetter);
+
+        index++;
+        aux = true;
+
+      }
+    }
+
+    return resultPhrase;
   }
 
   deleteTask(task : string){

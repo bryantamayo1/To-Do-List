@@ -36,7 +36,7 @@
 
                         <div class="orderTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.id}}</div>
 
-                        <div class="nameTask" [ngClass]="{'borderRightDark' : modeChange == true}" (click)="modifiedTask(task.id)">{{task.name}}
+                        <div class="nameTask" [ngClass]="{'borderRightDark' : modeChange == true}" (click)="modifiedTask(task.id)">{{changeLetter(task.name,"-",",")}}
                         </div>
 
                         <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.date}}</div>
