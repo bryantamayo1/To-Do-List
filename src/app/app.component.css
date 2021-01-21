@@ -17,6 +17,7 @@
 }
 
 .header{
+  transition: background-color 0.5s ease-in-out;
   position:-webkit-sticky;
   position: sticky;
   background-color: black;
@@ -31,6 +32,7 @@
 }
 
 .headerDark{
+  transition: background-color 0.5s ease-in-out;
   background-color: white;
   color:black;
   border-bottom: 1px solid black;
@@ -49,9 +51,6 @@
   margin-right: 10px;
   display: flex;
   align-items: center;
-
-
-
 }
 
 .switch {
@@ -90,14 +89,17 @@
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
+  box-shadow: 0 4px 4px rgba(26,53,71,0.25), 0 0 0 1px rgba(26,53,71,0.07); /*Not remove*/
 }
 
 input:checked + .slider {
   background-color: #2196F3;
+  box-shadow: 0 4px 4px rgba(26,53,71,0.25), 0 0 0 1px rgba(26,53,71,0.07);
 }
 
 input:focus + .slider {
   box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 4px 4px rgba(26,53,71,0.25), 0 0 0 1px rgba(26,53,71,0.07);
 }
 
 input:checked + .slider:before {
@@ -116,12 +118,15 @@ input:checked + .slider:before {
 }
 
 .body-container{
+  transition: background 0.5s ease-in-out;
   min-height: calc( 100vh - 60px - 56px);
   background-color: black;
 }
 
 .body-containerDark{
-  background-color: white;
+  transition: background 0.5s ease-in-out;
+  background-color:white;
+
 }
 
 .myTable{
@@ -258,11 +263,13 @@ input:checked + .slider:before {
 }
 
 .myFooter{
+  transition: background-color 0.5s ease-in-out;
   border-top: 1px solid white;
   background-color: black;
 }
 
 .myFooterDark {
+  transition: background-color 0.5s ease-in-out;
   border-top: 1px solid black !important;
   background-color: white !important;
   color:black !important;

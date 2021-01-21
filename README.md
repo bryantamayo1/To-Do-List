@@ -1,6 +1,12 @@
 # ToDoList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0. Next link you can see my web page [Hangman](https://bryantamayo1.github.io/To-Do-List/):
+
+![alt text](https://github.com/bryantamayo1/To-Do-List/blob/main/img/capture_1.png?raw=true "Image 1")
+
+![alt text](https://github.com/bryantamayo1/To-Do-List/blob/main/img/capture_2.png?raw=true "Image 1")
+
+
 
 ## Development server
 
