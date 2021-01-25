@@ -190,7 +190,7 @@ input:checked + .slider:before {
   width: 10vw;
 }
 
-.buttomTask button{
+.buttomTask btn-primary{
   text-align: center;
   text-align: -webkit-center;
 }
@@ -262,7 +262,7 @@ input:checked + .slider:before {
   padding-bottom: 20px;
 }
 
-.actionsButton buttom{
+.actionsButton btn-primary{
   text-align: center;
   text-align: -webkit-center;
 }
