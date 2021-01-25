@@ -190,12 +190,6 @@ input:checked + .slider:before {
   width: 10vw;
 }
 
-.buttomTask btn-primary{
-  text-align: center;
-  text-align: -webkit-center;
-  line-height: 30px;
-}
-
 .containerTasks{
   display: flex;
 }
@@ -256,16 +250,12 @@ input:checked + .slider:before {
 .actionsButton{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
   width: 30vw;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
-}
-
-.actionsButton btn-primary{
-  text-align: center;
-  text-align: -webkit-center;
 }
 
 .myFooter{
@@ -307,18 +297,13 @@ input:checked + .slider:before {
   }
 }
 
-@media (max-width : 1070px){
-  .myTable{
-    width: 805px !important;
-
-  }
-
+@media (max-width : 1130px){
   .tableHeader{
-    width: 800px !important;
+    width: 840px !important;
   }
 
   .containerTasks{
-    width: 800px !important;
+    width: 840px !important;
   }
 
   .orderTask{
@@ -326,24 +311,21 @@ input:checked + .slider:before {
   }
 
   .nameTask{
-    width: 485px !important;
+    width: 500px !important;
   }
 
   .dateTask{
-    width: 140px !important;
+    width: 160px !important;
   }
 
   .doneTask{
-    width: 43px !important;
+    width: 45px !important;
   }
 
   .buttomTask{
-    width: 107px !important;
+    width: 115px !important;
   }
-}
 
-
-@media (max-width : 920px){
   .scrollTable{
     overflow-x:scroll;
     margin-left: 10px;
@@ -354,6 +336,36 @@ input:checked + .slider:before {
     display: block !important;
     overflow-x: auto !important;
     white-space: nowrap !important;
+  }
+}
+
+@media (max-width : 900px){
+  .tableHeader{
+    width: 700px !important;
+  }
+
+  .containerTasks{
+    width: 700px !important;
+  }
+
+  .orderTask{
+    width: 32px !important;
+  }
+
+  .nameTask{
+    width: 350px !important;
+  }
+
+  .dateTask{
+    width: 160px !important;
+  }
+
+  .doneTask{
+    width: 45px !important;
+  }
+
+  .buttomTask{
+    width: 115px !important;
   }
 }
 
