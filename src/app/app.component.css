@@ -190,6 +190,11 @@ input:checked + .slider:before {
   width: 10vw;
 }
 
+.buttomTask button{
+  text-align: center;
+  text-align: -webkit-center;
+}
+
 .containerTasks{
   display: flex;
 }
