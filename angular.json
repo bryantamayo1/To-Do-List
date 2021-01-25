@@ -131,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "To-Do-List"
+  "defaultProject": "To-Do-List",
+  "cli": {
+    "analytics": "9cfed602-f1fa-4da3-abe5-1fef384b70e8"
+  }
 }

@@ -167,14 +167,14 @@ input:checked + .slider:before {
 
 .tableHeader .nameTask{
   border-right: 1px solid white;
-  width: 45vw;
+  width: 44vw;
 }
 
 
 
 .dateTask{
   border-right: 1px solid white;
-  width: 13vw;
+  width: 14vw;
 }
 
 .doneTask{
@@ -188,12 +188,6 @@ input:checked + .slider:before {
 
 .buttomTask{
   width: 10vw;
-}
-
-.buttomTask btn-primary{
-  text-align: center;
-  text-align: -webkit-center;
-  line-height: 30px;
 }
 
 .containerTasks{
@@ -220,7 +214,7 @@ input:checked + .slider:before {
 .containerTasks .nameTask{
   cursor: pointer;
   border-right: 1px solid white;
-  width: 45vw;
+  width: 44vw;
   font-family: 'Cardo',cursive;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -235,6 +229,8 @@ input:checked + .slider:before {
   align-items: center;
   border:none;
   outline: none;
+  line-height: 30px;
+  text-align: center;
 }
 
 .btn-primary:focus{
@@ -326,11 +322,11 @@ input:checked + .slider:before {
   }
 
   .nameTask{
-    width: 485px !important;
+    width: 470px !important;
   }
 
   .dateTask{
-    width: 140px !important;
+    width: 160px !important;
   }
 
   .doneTask{
