@@ -48,6 +48,16 @@
   align-items: center;
 }
 
+.myButtom{
+  height: 30px;
+  background:#007bff;
+  color:white;
+  border-radius: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
 #charNum{
   width: 100%;
   display: flex;
