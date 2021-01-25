@@ -170,8 +170,6 @@ input:checked + .slider:before {
   width: 45vw;
 }
 
-
-
 .dateTask{
   border-right: 1px solid white;
   width: 13vw;
@@ -294,7 +292,7 @@ input:checked + .slider:before {
 }
 
 
-@media (max-width : 1260px){
+@media (max-width : 1320px){
   .actionsButton{
     flex-direction: column;
     width: 150px;
@@ -302,20 +300,6 @@ input:checked + .slider:before {
 
   .actionsButton button{
     margin-bottom: 20px;
-  }
-
-  .btn-primary{
-    color:white;
-    height: 30px;
-    display: flex;
-    border:none;
-    outline: none;
-    justify-content: center;
-  }
-
-  .btn-primary:focus{
-    box-shadow: none;
-    background: #007BFF;
   }
 }
 
@@ -348,13 +332,10 @@ input:checked + .slider:before {
     width: 115px !important;
   }
 
-  .scrollTable{
-    overflow-x:scroll;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
   .myTable{
+    overflow-x:scroll;
+    margin-left: auto;
+    margin-right: auto;
     display: block !important;
     overflow-x: auto !important;
     white-space: nowrap !important;
