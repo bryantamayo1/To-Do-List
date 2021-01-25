@@ -49,6 +49,7 @@
 }
 
 .buttomModified .btn-primary {
+  line-height: 30px;
   text-align: center;
   text-align: -webkit-center;
 }

@@ -193,6 +193,7 @@ input:checked + .slider:before {
 .buttomTask btn-primary{
   text-align: center;
   text-align: -webkit-center;
+  line-height: 30px;
 }
 
 .containerTasks{
