@@ -9,7 +9,7 @@
 .btn-primary{
   height: 30px;
   display: flex;
-  align-items: center;
+  -webkit-align-items: center;
 }
 
 .btn-primary:focus{
@@ -25,7 +25,6 @@
   margin-right: 4px !important;
   margin-top: 4px !important;
   justify-content: flex-end;
-
 }
 
 .textModified{
