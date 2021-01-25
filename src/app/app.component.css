@@ -222,18 +222,40 @@ input:checked + .slider:before {
 
 }
 
-.btn-primary{
-  color:white;
+.myButtom{
   height: 30px;
+  background:#007bff;
+  color:white;
+  border-radius: 6px;
+  width: 130px;
+  cursor: pointer;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
-  border:none;
-  outline: none;
+  justify-content: center;
 }
 
-.btn-primary:focus{
+.myButtom:hover{
   box-shadow: none;
-  background: #007BFF;
+  background: #0e61ba;
+}
+
+.myButtomDelete{
+  height: 30px !important;
+  width: 110px ;
+  background:#007bff;
+  color:white;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:none !important;
+}
+
+.myButtomDelete:hover{
+  box-shadow: none;
+  background: #0e61ba;
 }
 
 .divInsertTask{
@@ -249,13 +271,13 @@ input:checked + .slider:before {
 
 .actionsButton{
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-top: 20px;
   width: 30vw;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 20px;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .myFooter{

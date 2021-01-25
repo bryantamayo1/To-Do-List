@@ -41,7 +41,7 @@
 
                         <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.date}}</div>
                         <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}"><input type="checkbox" (change)="clickCheck($event, task)" ></div>
-                        <div class="buttomTask"><button type="button" (click)="deleteTask(task.name)" class="btn btn-primary" >Delete task</button></div>
+                        <div class="buttomTask"><div class="myButtomDelete" (click)="deleteTask(task.name)">Delete task</div></div>
 
                 </div>
 
@@ -53,11 +53,10 @@
         </div>
 
         <div class="actionsButton">
-          <button class="btn btn-primary"  (click)="addTask()">Add new task</button>
-          <button class="btn btn-primary" (click)="hiddenComplete()" *ngIf="showTask">Hide complete</button>
-          <button class="btn btn-primary" (click)="showComplete()" *ngIf="!showTask">Show complete</button>
-          <button class="btn btn-primary" (click)="exportTableToCSV('to-do-list.csv')">Generate CSV</button>
-
+          <div class="myButtom" (click)="addTask()">Add new task</div>
+          <div class="myButtom" (click)="hiddenComplete()" *ngIf="showTask">Hide complete</div>
+          <div class="myButtom" (click)="showComplete()" *ngIf="!showTask">Show complete</div>
+          <div class="myButtom" (click)="exportTableToCSV('to-do-list.csv')">Generate CSV</div>
         </div>
 
     </div>

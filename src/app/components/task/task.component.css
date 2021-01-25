@@ -6,16 +6,6 @@
   cursor: pointer;
 }
 
-.btn-primary{
-  height: 30px;
-  display: flex;
-  -webkit-align-items: center;
-}
-
-.btn-primary:focus{
-  box-shadow: none;
-  background: #007BFF;
-}
 .sonComponent {
   display: block;
 }
@@ -45,7 +35,6 @@
   justify-content: center;
   margin-top: 20px;
   padding-bottom: 20px;
-  align-items: center;
 }
 
 .myButtom{
@@ -56,6 +45,14 @@
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.myButtom:focus{
+  box-shadow: none;
+  background: #007BFF;
 }
 
 #charNum{
