@@ -4,8 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![alt text](https://github.com/bryantamayo1/To-Do-List/blob/main/img/capture_1.png?raw=true "Image 1")
 
-![alt text](https://github.com/bryantamayo1/To-Do-List/blob/main/img/capture_2.png?raw=true "Image 1")
+![alt text](https://github.com/bryantamayo1/To-Do-List/blob/main/img/capture_2.png?raw=true "Image 2")
 
+![alt text](https://github.com/bryantamayo1/To-Do-List/blob/main/img/capture_3.png?raw=true "Image 3")
 
 
 ## Development server
