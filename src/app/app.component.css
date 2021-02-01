@@ -340,6 +340,10 @@ input:checked + .slider:before {
     overflow-x: auto !important;
     white-space: nowrap !important;
   }
+
+  .divInsertTask{
+    width: 40vw;
+  }
 }
 
 @media (max-width : 900px){
@@ -370,6 +374,10 @@ input:checked + .slider:before {
   .buttomTask{
     width: 115px !important;
   }
+
+  .divInsertTask{
+    width: 50vw;
+  }
 }
 
 @media(max-width : 640px){
@@ -382,6 +390,11 @@ input:checked + .slider:before {
   .taskComponent{
     width: 350px !important;
   }
+
+  .divInsertTask{
+    width: 60vw;
+  }
+
 }
 
 @media(max-width : 350px){
