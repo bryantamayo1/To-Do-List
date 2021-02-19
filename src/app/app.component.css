@@ -347,12 +347,16 @@ input:checked + .slider:before {
 }
 
 @media (max-width : 900px){
+  .myTable{
+    width: 85vw !important;
+  }
+
   .tableHeader{
-    width: 700px !important;
+    width: 760px !important;
   }
 
   .containerTasks{
-    width: 700px !important;
+    width: 760px !important;
   }
 
   .orderTask{
@@ -360,7 +364,7 @@ input:checked + .slider:before {
   }
 
   .nameTask{
-    width: 350px !important;
+    width: 410px !important;
   }
 
   .dateTask{
@@ -392,7 +396,7 @@ input:checked + .slider:before {
   }
 
   .divInsertTask{
-    width: 60vw;
+    width: 70vw;
   }
 
 }
@@ -409,7 +413,6 @@ input:checked + .slider:before {
   width: 600px;
   z-index: 2;
   border-radius: 10px;
-  border: 1px solid black;
   background: white ;
   box-shadow: 0 11px 15px -7px rgb(0 0 0 /20%), 0 24px 38px 3px rgb(0 0 0 /14%), 0 9px 46px 8px rgb(0 0 0 /12%);
 }

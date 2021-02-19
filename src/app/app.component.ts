@@ -42,8 +42,6 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
 
-
-
   }
 
   mode(){
@@ -112,8 +110,8 @@ export class AppComponent implements OnInit{
     return resultPhrase;
   }
 
-  deleteTask(task : string){
-    this.bufferTask = this.bufferTask.filter( element => element.name != task);
+  deleteTask(task : number){
+    this.bufferTask = this.bufferTask.filter( element => element.id != task);
 
   }
 
