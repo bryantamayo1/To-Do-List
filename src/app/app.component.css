@@ -161,6 +161,7 @@ input:checked + .slider:before {
 }
 
 .orderTask{
+  cursor: pointer;
   border-right: 1px solid white;
   width: 3vw;
 }
@@ -171,6 +172,7 @@ input:checked + .slider:before {
 }
 
 .dateTask{
+  cursor: pointer;
   border-right: 1px solid white;
   width: 13vw;
 }

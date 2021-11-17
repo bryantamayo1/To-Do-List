@@ -33,12 +33,12 @@
 
                 <div *ngFor="let task of bufferTask" [hidden]="task.check && testCheck" class="containerTasks" [ngClass]="{'containerTasksDark' : modeChange == true}">
 
-                        <div class="orderTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.id}}</div>
+                        <div class="orderTask" [ngClass]="{'borderRightDark' : modeChange == true}" (click)="modifiedTask(task.id)">{{task.id}}</div>
 
                         <div class="nameTask" [ngClass]="{'borderRightDark' : modeChange == true}" (click)="modifiedTask(task.id)">{{changeLetter(task.name,"-",",")}}
                         </div>
 
-                        <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}">{{task.date}}</div>
+                        <div class="dateTask" [ngClass]="{'borderRightDark' : modeChange == true}" (click)="modifiedTask(task.id)">{{task.date}}</div>
                         <div class="doneTask" [ngClass]="{'borderRightDark' : modeChange == true}"><input type="checkbox" (change)="clickCheck($event, task)" ></div>
                         <div class="buttomTask"><div class="myButtomDelete" (click)="deleteTask(task.id)">Delete task</div></div>
 
